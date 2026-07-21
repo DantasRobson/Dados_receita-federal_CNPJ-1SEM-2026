@@ -1,0 +1,41 @@
+table dMunicipio
+	lineageTag: 8178bafe-72e5-4f13-b435-f06fc2de38cc
+
+	column UF
+		dataType: string
+		lineageTag: 30416f93-db3f-4453-8c4a-292ca3bc9149
+		summarizeBy: none
+		sourceColumn: UF
+
+		annotation SummarizationSetBy = Automatic
+
+	column COD_MUNICIPIO
+		dataType: string
+		lineageTag: aecc4ab0-09a7-4b8f-9726-aba2aae38492
+		summarizeBy: none
+		sourceColumn: COD_MUNICIPIO
+
+		annotation SummarizationSetBy = Automatic
+
+	column NOME_MUNICIPIO
+		dataType: string
+		lineageTag: 82d92faa-e596-44bb-8dbb-a10db87acfdc
+		summarizeBy: none
+		sourceColumn: NOME_MUNICIPIO
+
+		annotation SummarizationSetBy = Automatic
+
+	partition dMunicipio = m
+		mode: import
+		source =
+				let
+				    Fonte = Parquet.Document(File.Contents("C:\Users\Robson Melo\Downloads\2026-06\DADOS_TRATADOS_CNPJ-2026.parquet"), [Compression=null, LegacyColumnNameEncoding=false, MaxDepth=null]),
+				    #"Outras Colunas Removidas" = Table.SelectColumns(Fonte,{"UF", "COD_MUNICIPIO", "NOME_MUNICIPIO"}),
+				    #"Linhas em Branco Removidas" = Table.SelectRows(#"Outras Colunas Removidas", each not List.IsEmpty(List.RemoveMatchingItems(Record.FieldValues(_), {"", null})))
+				in
+				    #"Linhas em Branco Removidas"
+
+	annotation PBI_NavigationStepName = Navegação
+
+	annotation PBI_ResultType = Table
+

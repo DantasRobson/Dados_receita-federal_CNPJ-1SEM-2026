@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "CNPJ_receita_federal_1-semestre-2026"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "ae072ea4-8acd-42b3-92c2-7f09afd8a7bd"
+  }
+}

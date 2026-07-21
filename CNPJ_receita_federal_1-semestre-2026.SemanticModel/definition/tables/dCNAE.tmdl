@@ -1,0 +1,33 @@
+table dCNAE
+	lineageTag: fba848e6-61ed-45c6-81f0-84d443fd07ee
+
+	column COD_CNAE
+		dataType: string
+		lineageTag: 556d4407-b281-4fb6-8d55-3da18a5a5604
+		summarizeBy: none
+		sourceColumn: COD_CNAE
+
+		annotation SummarizationSetBy = Automatic
+
+	column DESCRICAO_CNAE
+		dataType: string
+		lineageTag: 3b892a42-e93a-47a7-b18e-6474ed369b3a
+		summarizeBy: none
+		sourceColumn: DESCRICAO_CNAE
+
+		annotation SummarizationSetBy = Automatic
+
+	partition dCNAE = m
+		mode: import
+		source =
+				let
+				    Fonte = Parquet.Document(File.Contents("C:\Users\Robson Melo\Downloads\2026-06\DADOS_TRATADOS_CNPJ-2026.parquet"), [Compression=null, LegacyColumnNameEncoding=false, MaxDepth=null]),
+				    #"Outras Colunas Removidas" = Table.SelectColumns(Fonte,{"COD_CNAE", "DESCRICAO_CNAE"}),
+				    #"Linhas em Branco Removidas" = Table.SelectRows(#"Outras Colunas Removidas", each not List.IsEmpty(List.RemoveMatchingItems(Record.FieldValues(_), {"", null})))
+				in
+				    #"Linhas em Branco Removidas"
+
+	annotation PBI_NavigationStepName = Navegação
+
+	annotation PBI_ResultType = Table
+

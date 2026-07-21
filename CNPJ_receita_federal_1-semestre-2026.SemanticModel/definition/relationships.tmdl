@@ -1,0 +1,30 @@
+relationship 431705de-1eb1-4faf-8627-51e14607c921
+	joinOnDateBehavior: datePartOnly
+	fromColumn: fEstabelecimentos.DATA_DE_INICIO_ATIVIDADE
+	toColumn: LocalDateTable_935ad064-a203-4d6d-b4e4-6cbd0832395c.Date
+
+relationship 0f769686-34d2-4854-9912-d0d11228dd65
+	joinOnDateBehavior: datePartOnly
+	fromColumn: fEstabelecimentos.DATA_DE_OPCAO_PELO_SIMPLES
+	toColumn: LocalDateTable_fbe016a9-9582-4dc2-a465-c19be6620085.Date
+
+relationship c79be6c8-a932-4516-899c-8fab2cbdc18f
+	joinOnDateBehavior: datePartOnly
+	fromColumn: fEstabelecimentos.DATA_DE_EXCLUSAO_DO_SIMPLES
+	toColumn: LocalDateTable_9bbae134-aa1c-4768-8139-73e582415910.Date
+
+relationship 44f0f305-07fd-4817-87cf-599818117b0f
+	joinOnDateBehavior: datePartOnly
+	fromColumn: fEstabelecimentos.DATA_DE_OPCAO_PELO_MEI
+	toColumn: LocalDateTable_81e865bd-397b-413a-9ad8-2c17bc9317bc.Date
+
+relationship c789d6d9-0e71-47c1-930d-59d939926c80
+	joinOnDateBehavior: datePartOnly
+	fromColumn: fEstabelecimentos.DATA_DE_EXCLUSAO_DO_MEI
+	toColumn: LocalDateTable_7592daf4-c441-4010-97a3-67d4c379eb38.Date
+
+relationship 284ec98f-1ef2-49cf-9037-3e72795960e8
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Dcalendario.Data
+	toColumn: LocalDateTable_808ade0b-164e-4ae4-ab9d-f264ccd6893d.Date
+

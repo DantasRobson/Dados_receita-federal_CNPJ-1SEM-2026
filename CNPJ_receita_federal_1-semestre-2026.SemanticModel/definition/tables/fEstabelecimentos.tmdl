@@ -1,0 +1,327 @@
+table fEstabelecimentos
+	lineageTag: 85e6b432-7ef3-44bc-acc8-e09dabf9304d
+
+	column CNPJ_BASICO
+		dataType: string
+		lineageTag: 30562c23-a515-4f61-a41b-4f0f615407ea
+		summarizeBy: none
+		sourceColumn: CNPJ_BASICO
+
+		annotation SummarizationSetBy = Automatic
+
+	column RAZAO_SOCIAL
+		dataType: string
+		lineageTag: d066b056-25b2-4882-9519-576faa05e575
+		summarizeBy: none
+		sourceColumn: RAZAO_SOCIAL
+
+		annotation SummarizationSetBy = Automatic
+
+	column IDENTIFICADOR_MATRIZ/FILIAL
+		dataType: string
+		lineageTag: 45237844-9648-4198-a59a-fdd062d7cf60
+		summarizeBy: none
+		sourceColumn: IDENTIFICADOR_MATRIZ/FILIAL
+
+		annotation SummarizationSetBy = Automatic
+
+	column PORTE_DA_EMPRESA
+		dataType: int64
+		formatString: 0
+		lineageTag: 562ac871-2f19-4a76-9f08-b874852257c0
+		summarizeBy: sum
+		sourceColumn: PORTE_DA_EMPRESA
+
+		annotation SummarizationSetBy = Automatic
+
+	column CAPITAL_SOCIAL_DA_EMPRESA
+		dataType: double
+		lineageTag: ae29e0f3-87ba-410a-aad8-2b3ed062ee8d
+		summarizeBy: sum
+		sourceColumn: CAPITAL_SOCIAL_DA_EMPRESA
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column COD_NATUREZA
+		dataType: string
+		lineageTag: ebb9c430-fbef-4296-96ec-2e25e72aeb5e
+		summarizeBy: none
+		sourceColumn: COD_NATUREZA
+
+		annotation SummarizationSetBy = Automatic
+
+	column DESCRICAO_NATUREZA
+		dataType: string
+		lineageTag: 02a82958-5595-438a-ac89-8af0c7181466
+		summarizeBy: none
+		sourceColumn: DESCRICAO_NATUREZA
+
+		annotation SummarizationSetBy = Automatic
+
+	column QUALIFICACAO_DO_RESPONSAVEL
+		dataType: int64
+		formatString: 0
+		lineageTag: 3ea9f99d-bafb-4e56-91eb-9cfc5ead5568
+		summarizeBy: sum
+		sourceColumn: QUALIFICACAO_DO_RESPONSAVEL
+
+		annotation SummarizationSetBy = Automatic
+
+	column DATA_SITUACAO_CADASTRAL
+		dataType: string
+		lineageTag: c330f8eb-e688-4d59-a555-e56cc57e2f75
+		summarizeBy: none
+		sourceColumn: DATA_SITUACAO_CADASTRAL
+
+		annotation SummarizationSetBy = Automatic
+
+	column SITUACAO_CADASTRAL
+		dataType: int64
+		formatString: 0
+		lineageTag: c0e08ed9-6f6e-4ae4-b0d6-c7c44d91c4d0
+		summarizeBy: sum
+		sourceColumn: SITUACAO_CADASTRAL
+
+		annotation SummarizationSetBy = Automatic
+
+	column MOTIVO_SITUACAO_CADASTRAL
+		dataType: string
+		lineageTag: 3bc5d3eb-3c6c-49e3-91f5-b6f3bd721ef2
+		summarizeBy: none
+		sourceColumn: MOTIVO_SITUACAO_CADASTRAL
+
+		annotation SummarizationSetBy = Automatic
+
+	column COD_MOTIVO
+		dataType: string
+		lineageTag: 5cf6066d-1a89-43e6-8c2f-fe6689f738f8
+		summarizeBy: none
+		sourceColumn: COD_MOTIVO
+
+		annotation SummarizationSetBy = Automatic
+
+	column MOTIVO
+		dataType: string
+		lineageTag: c7b5286b-2ee8-4dfa-91be-07198d0aac57
+		summarizeBy: none
+		sourceColumn: MOTIVO
+
+		annotation SummarizationSetBy = Automatic
+
+	column DATA_DE_INICIO_ATIVIDADE
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 69e93489-bcd6-4dcc-a222-da160c10824a
+		summarizeBy: none
+		sourceColumn: DATA_DE_INICIO_ATIVIDADE
+
+		variation Variation
+			isDefault
+			relationship: 431705de-1eb1-4faf-8627-51e14607c921
+			defaultHierarchy: LocalDateTable_935ad064-a203-4d6d-b4e4-6cbd0832395c.'Hierarquia de datas'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column COD_CNAE
+		dataType: string
+		lineageTag: ac989db7-8f4a-4323-8136-8c42398f387e
+		summarizeBy: none
+		sourceColumn: COD_CNAE
+
+		annotation SummarizationSetBy = Automatic
+
+	column DESCRICAO_CNAE
+		dataType: string
+		lineageTag: 07eaa70a-9d73-4a7d-8304-d880b340df40
+		summarizeBy: none
+		sourceColumn: DESCRICAO_CNAE
+
+		annotation SummarizationSetBy = Automatic
+
+	column UF
+		dataType: string
+		lineageTag: de9e99aa-7cdf-4e8a-82ed-e1aaa0f3c4d6
+		summarizeBy: none
+		sourceColumn: UF
+
+		annotation SummarizationSetBy = Automatic
+
+	column COD_MUNICIPIO
+		dataType: string
+		lineageTag: 2e901536-f620-4fd7-b599-16210b17a4f8
+		summarizeBy: none
+		sourceColumn: COD_MUNICIPIO
+
+		annotation SummarizationSetBy = Automatic
+
+	column NOME_MUNICIPIO
+		dataType: string
+		lineageTag: ad30caab-b850-4f87-8676-c3a567a00f87
+		summarizeBy: none
+		sourceColumn: NOME_MUNICIPIO
+
+		annotation SummarizationSetBy = Automatic
+
+	column BAIRRO
+		dataType: string
+		lineageTag: e35072af-d96f-4099-b8ee-21003598848d
+		summarizeBy: none
+		sourceColumn: BAIRRO
+
+		annotation SummarizationSetBy = Automatic
+
+	column TIPO_DE_LOGRADOURO
+		dataType: string
+		lineageTag: f1a97ef7-d1c8-4a16-a1f7-529f685f3b6f
+		summarizeBy: none
+		sourceColumn: TIPO_DE_LOGRADOURO
+
+		annotation SummarizationSetBy = Automatic
+
+	column LOGRADOURO
+		dataType: string
+		lineageTag: 62dd9254-a16f-4e85-acca-013f98d57165
+		summarizeBy: none
+		sourceColumn: LOGRADOURO
+
+		annotation SummarizationSetBy = Automatic
+
+	column NUMERO
+		dataType: string
+		lineageTag: 56556a1e-5ef5-4c12-86e6-25d45d318d15
+		summarizeBy: none
+		sourceColumn: NUMERO
+
+		annotation SummarizationSetBy = Automatic
+
+	column COMPLEMENTO
+		dataType: string
+		lineageTag: e13e1ca3-4141-4276-8a47-a4328a653219
+		summarizeBy: none
+		sourceColumn: COMPLEMENTO
+
+		annotation SummarizationSetBy = Automatic
+
+	column CEP
+		dataType: string
+		lineageTag: e549b02a-f494-4a92-8f47-ee94bd14b51c
+		summarizeBy: none
+		sourceColumn: CEP
+
+		annotation SummarizationSetBy = Automatic
+
+	column OPCAO_PELO_SIMPLES
+		dataType: string
+		lineageTag: fab45358-876f-460e-88dc-f321a0a34cc3
+		summarizeBy: none
+		sourceColumn: OPCAO_PELO_SIMPLES
+
+		annotation SummarizationSetBy = Automatic
+
+	column DATA_DE_OPCAO_PELO_SIMPLES
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 92ea1ff6-9a61-4968-a0ce-84d7b4ca5040
+		summarizeBy: none
+		sourceColumn: DATA_DE_OPCAO_PELO_SIMPLES
+
+		variation Variation
+			isDefault
+			relationship: 0f769686-34d2-4854-9912-d0d11228dd65
+			defaultHierarchy: LocalDateTable_fbe016a9-9582-4dc2-a465-c19be6620085.'Hierarquia de datas'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column DATA_DE_EXCLUSAO_DO_SIMPLES
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 88c6f914-a7bf-4bc4-bba6-9849db411a68
+		summarizeBy: none
+		sourceColumn: DATA_DE_EXCLUSAO_DO_SIMPLES
+
+		variation Variation
+			isDefault
+			relationship: c79be6c8-a932-4516-899c-8fab2cbdc18f
+			defaultHierarchy: LocalDateTable_9bbae134-aa1c-4768-8139-73e582415910.'Hierarquia de datas'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column DURACAO_DO_SIMPLES
+		dataType: int64
+		formatString: 0
+		lineageTag: ac15b476-4ece-43be-82f1-49bad87f5dbf
+		summarizeBy: sum
+		sourceColumn: DURACAO_DO_SIMPLES
+
+		annotation SummarizationSetBy = Automatic
+
+	column OPCAO_PELO_MEI
+		dataType: string
+		lineageTag: 7691a7bf-a506-40d6-8e11-75c0e3cee018
+		summarizeBy: none
+		sourceColumn: OPCAO_PELO_MEI
+
+		annotation SummarizationSetBy = Automatic
+
+	column DATA_DE_OPCAO_PELO_MEI
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: e3d1fc12-c554-4514-8a03-effe718f63ab
+		summarizeBy: none
+		sourceColumn: DATA_DE_OPCAO_PELO_MEI
+
+		variation Variation
+			isDefault
+			relationship: 44f0f305-07fd-4817-87cf-599818117b0f
+			defaultHierarchy: LocalDateTable_81e865bd-397b-413a-9ad8-2c17bc9317bc.'Hierarquia de datas'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column DATA_DE_EXCLUSAO_DO_MEI
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 2fad6885-aa41-4f11-a216-fdbf5f9f1935
+		summarizeBy: none
+		sourceColumn: DATA_DE_EXCLUSAO_DO_MEI
+
+		variation Variation
+			isDefault
+			relationship: c789d6d9-0e71-47c1-930d-59d939926c80
+			defaultHierarchy: LocalDateTable_7592daf4-c441-4010-97a3-67d4c379eb38.'Hierarquia de datas'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column DURACAO_DO_MEI
+		dataType: int64
+		formatString: 0
+		lineageTag: 2712017e-d118-4bb2-b5aa-83ea6f10b583
+		summarizeBy: sum
+		sourceColumn: DURACAO_DO_MEI
+
+		annotation SummarizationSetBy = Automatic
+
+	partition fEstabelecimentos = m
+		mode: import
+		source =
+				let
+				    Fonte = Parquet.Document(File.Contents("C:\Users\Robson Melo\Downloads\2026-06\DADOS_TRATADOS_CNPJ-2026.parquet"), [Compression=null, LegacyColumnNameEncoding=false, MaxDepth=null]),
+				    #"Outras Colunas Removidas" = Table.SelectColumns(Fonte,{"CNPJ_BASICO", "RAZAO_SOCIAL", "IDENTIFICADOR_MATRIZ/FILIAL", "PORTE_DA_EMPRESA", "CAPITAL_SOCIAL_DA_EMPRESA", "COD_NATUREZA", "DESCRICAO_NATUREZA", "QUALIFICACAO_DO_RESPONSAVEL", "DATA_SITUACAO_CADASTRAL", "SITUACAO_CADASTRAL", "MOTIVO_SITUACAO_CADASTRAL", "COD_MOTIVO", "MOTIVO", "DATA_DE_INICIO_ATIVIDADE", "COD_CNAE", "DESCRICAO_CNAE", "UF", "COD_MUNICIPIO", "NOME_MUNICIPIO", "BAIRRO", "TIPO_DE_LOGRADOURO", "LOGRADOURO", "NUMERO", "COMPLEMENTO", "CEP", "OPCAO_PELO_SIMPLES", "DATA_DE_OPCAO_PELO_SIMPLES", "DATA_DE_EXCLUSAO_DO_SIMPLES", "DURACAO_DO_SIMPLES", "OPCAO_PELO_MEI", "DATA_DE_OPCAO_PELO_MEI", "DATA_DE_EXCLUSAO_DO_MEI", "DURACAO_DO_MEI"})
+				in
+				    #"Outras Colunas Removidas"
+
+	annotation PBI_NavigationStepName = Navegação
+
+	annotation PBI_ResultType = Table
+

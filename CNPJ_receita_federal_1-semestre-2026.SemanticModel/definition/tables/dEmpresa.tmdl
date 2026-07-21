@@ -1,0 +1,73 @@
+table dEmpresa
+	lineageTag: 9f12fbe2-042f-4c40-a984-7180d622a85a
+
+	column CNPJ_BASICO
+		dataType: string
+		lineageTag: 632d246b-9394-4226-8fe4-6e505aa387b6
+		summarizeBy: none
+		sourceColumn: CNPJ_BASICO
+
+		annotation SummarizationSetBy = Automatic
+
+	column RAZAO_SOCIAL
+		dataType: string
+		lineageTag: ab4453dc-8e4f-4a6e-8536-20c89b700d17
+		summarizeBy: none
+		sourceColumn: RAZAO_SOCIAL
+
+		annotation SummarizationSetBy = Automatic
+
+	column NOME_FANTASIA
+		dataType: string
+		lineageTag: 356e1163-ff6a-41fe-81b8-cd78a1071500
+		summarizeBy: none
+		sourceColumn: NOME_FANTASIA
+
+		annotation SummarizationSetBy = Automatic
+
+	column PORTE_DA_EMPRESA
+		dataType: int64
+		formatString: 0
+		lineageTag: 7b998931-540f-4f63-b6de-9782a66ffdfd
+		summarizeBy: sum
+		sourceColumn: PORTE_DA_EMPRESA
+
+		annotation SummarizationSetBy = Automatic
+
+	column DESCRICAO_NATUREZA
+		dataType: string
+		lineageTag: f94e1d5c-714e-4d33-9362-51741c4ad9c6
+		summarizeBy: none
+		sourceColumn: DESCRICAO_NATUREZA
+
+		annotation SummarizationSetBy = Automatic
+
+	column OPCAO_PELO_SIMPLES
+		dataType: string
+		lineageTag: b24062f2-57c3-41b8-9d3b-d05ffc0fa8dd
+		summarizeBy: none
+		sourceColumn: OPCAO_PELO_SIMPLES
+
+		annotation SummarizationSetBy = Automatic
+
+	column OPCAO_PELO_MEI
+		dataType: string
+		lineageTag: 0dc77358-dcc3-405d-9b51-d185bfc17e05
+		summarizeBy: none
+		sourceColumn: OPCAO_PELO_MEI
+
+		annotation SummarizationSetBy = Automatic
+
+	partition dEmpresa = m
+		mode: import
+		source =
+				let
+				    Fonte = Parquet.Document(File.Contents("C:\Users\Robson Melo\Downloads\2026-06\DADOS_TRATADOS_CNPJ-2026.parquet"), [Compression=null, LegacyColumnNameEncoding=false, MaxDepth=null]),
+				    #"Outras Colunas Removidas" = Table.SelectColumns(Fonte,{"CNPJ_BASICO", "RAZAO_SOCIAL", "NOME_FANTASIA", "PORTE_DA_EMPRESA", "DESCRICAO_NATUREZA", "OPCAO_PELO_SIMPLES", "OPCAO_PELO_MEI"})
+				in
+				    #"Outras Colunas Removidas"
+
+	annotation PBI_NavigationStepName = Navegação
+
+	annotation PBI_ResultType = Table
+
