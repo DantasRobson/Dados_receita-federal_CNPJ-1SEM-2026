@@ -29,7 +29,7 @@ table dEmpresa
 		dataType: int64
 		formatString: 0
 		lineageTag: 7b998931-540f-4f63-b6de-9782a66ffdfd
-		summarizeBy: sum
+		summarizeBy: none
 		sourceColumn: PORTE_DA_EMPRESA
 
 		annotation SummarizationSetBy = Automatic
@@ -63,9 +63,10 @@ table dEmpresa
 		source =
 				let
 				    Fonte = Parquet.Document(File.Contents("C:\Users\Robson Melo\Downloads\2026-06\DADOS_TRATADOS_CNPJ-2026.parquet"), [Compression=null, LegacyColumnNameEncoding=false, MaxDepth=null]),
-				    #"Outras Colunas Removidas" = Table.SelectColumns(Fonte,{"CNPJ_BASICO", "RAZAO_SOCIAL", "NOME_FANTASIA", "PORTE_DA_EMPRESA", "DESCRICAO_NATUREZA", "OPCAO_PELO_SIMPLES", "OPCAO_PELO_MEI"})
+				    #"Outras Colunas Removidas" = Table.SelectColumns(Fonte,{"CNPJ_BASICO", "RAZAO_SOCIAL", "NOME_FANTASIA", "PORTE_DA_EMPRESA", "DESCRICAO_NATUREZA", "OPCAO_PELO_SIMPLES", "OPCAO_PELO_MEI"}),
+				    #"Duplicatas Removidas" = Table.Distinct(#"Outras Colunas Removidas", {"CNPJ_BASICO"})
 				in
-				    #"Outras Colunas Removidas"
+				    #"Duplicatas Removidas"
 
 	annotation PBI_NavigationStepName = Navegação
 

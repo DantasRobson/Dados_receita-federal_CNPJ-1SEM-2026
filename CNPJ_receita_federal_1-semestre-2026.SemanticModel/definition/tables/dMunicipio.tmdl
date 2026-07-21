@@ -31,9 +31,10 @@ table dMunicipio
 				let
 				    Fonte = Parquet.Document(File.Contents("C:\Users\Robson Melo\Downloads\2026-06\DADOS_TRATADOS_CNPJ-2026.parquet"), [Compression=null, LegacyColumnNameEncoding=false, MaxDepth=null]),
 				    #"Outras Colunas Removidas" = Table.SelectColumns(Fonte,{"UF", "COD_MUNICIPIO", "NOME_MUNICIPIO"}),
-				    #"Linhas em Branco Removidas" = Table.SelectRows(#"Outras Colunas Removidas", each not List.IsEmpty(List.RemoveMatchingItems(Record.FieldValues(_), {"", null})))
+				    #"Linhas em Branco Removidas" = Table.SelectRows(#"Outras Colunas Removidas", each not List.IsEmpty(List.RemoveMatchingItems(Record.FieldValues(_), {"", null}))),
+				    #"Duplicatas Removidas" = Table.Distinct(#"Linhas em Branco Removidas", {"UF"})
 				in
-				    #"Linhas em Branco Removidas"
+				    #"Duplicatas Removidas"
 
 	annotation PBI_NavigationStepName = Navegação
 

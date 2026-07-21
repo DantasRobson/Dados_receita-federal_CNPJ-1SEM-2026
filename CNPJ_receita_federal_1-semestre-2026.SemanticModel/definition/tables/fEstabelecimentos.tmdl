@@ -117,11 +117,6 @@ table fEstabelecimentos
 		summarizeBy: none
 		sourceColumn: DATA_DE_INICIO_ATIVIDADE
 
-		variation Variation
-			isDefault
-			relationship: 431705de-1eb1-4faf-8627-51e14607c921
-			defaultHierarchy: LocalDateTable_935ad064-a203-4d6d-b4e4-6cbd0832395c.'Hierarquia de datas'
-
 		annotation SummarizationSetBy = Automatic
 
 		annotation UnderlyingDateTimeDataType = Date

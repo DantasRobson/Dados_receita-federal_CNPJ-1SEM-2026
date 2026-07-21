@@ -1,0 +1,87 @@
+{
+  "version": "1.1.0",
+  "diagrams": [
+    {
+      "ordinal": 0,
+      "scrollPosition": {
+        "x": 0,
+        "y": 0
+      },
+      "nodes": [
+        {
+          "location": {
+            "x": 0,
+            "y": 216.35888100000003
+          },
+          "nodeIndex": "Dcalendario",
+          "nodeLineageTag": "d0f08583-5ff8-48fa-9ba6-248fcfe3fa06",
+          "size": {
+            "height": 296,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 304,
+            "y": 0
+          },
+          "nodeIndex": "dCNAE",
+          "nodeLineageTag": "fba848e6-61ed-45c6-81f0-84d443fd07ee",
+          "size": {
+            "height": 128,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 259.594438,
+            "y": 653.519616
+          },
+          "nodeIndex": "dEmpresa",
+          "nodeLineageTag": "9f12fbe2-042f-4c40-a984-7180d622a85a",
+          "size": {
+            "height": 248,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 797,
+            "y": 295
+          },
+          "nodeIndex": "dMunicipio",
+          "nodeLineageTag": "8178bafe-72e5-4f13-b435-f06fc2de38cc",
+          "size": {
+            "height": 152,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 363.59940399999982,
+            "y": 203.72951500000005
+          },
+          "nodeIndex": "fEstabelecimentos",
+          "nodeLineageTag": "85e6b432-7ef3-44bc-acc8-e09dabf9304d",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        }
+      ],
+      "name": "Todas as tabelas",
+      "zoomValue": 56.447393005377734,
+      "pinKeyFieldsToTop": false,
+      "showExtraHeaderInfo": false,
+      "hideKeyFieldsWhenCollapsed": false,
+      "tablesLocked": false
+    }
+  ],
+  "selectedDiagram": "Todas as tabelas",
+  "defaultDiagram": "Todas as tabelas"
+}

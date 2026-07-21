@@ -1,8 +1,3 @@
-relationship 431705de-1eb1-4faf-8627-51e14607c921
-	joinOnDateBehavior: datePartOnly
-	fromColumn: fEstabelecimentos.DATA_DE_INICIO_ATIVIDADE
-	toColumn: LocalDateTable_935ad064-a203-4d6d-b4e4-6cbd0832395c.Date
-
 relationship 0f769686-34d2-4854-9912-d0d11228dd65
 	joinOnDateBehavior: datePartOnly
 	fromColumn: fEstabelecimentos.DATA_DE_OPCAO_PELO_SIMPLES
@@ -27,4 +22,20 @@ relationship 284ec98f-1ef2-49cf-9037-3e72795960e8
 	joinOnDateBehavior: datePartOnly
 	fromColumn: Dcalendario.Data
 	toColumn: LocalDateTable_808ade0b-164e-4ae4-ab9d-f264ccd6893d.Date
+
+relationship 303b7657-70af-ee6c-8624-074ead92822c
+	fromColumn: fEstabelecimentos.COD_CNAE
+	toColumn: dCNAE.COD_CNAE
+
+relationship b2622131-c4f4-28b7-d786-4bee59e053da
+	fromColumn: fEstabelecimentos.COD_MUNICIPIO
+	toColumn: dMunicipio.COD_MUNICIPIO
+
+relationship 0bf79be8-2812-05a7-6abb-241c8a0737ac
+	fromColumn: fEstabelecimentos.CNPJ_BASICO
+	toColumn: dEmpresa.CNPJ_BASICO
+
+relationship e58fbc06-255e-c66f-2412-4a00e8dbbadd
+	fromColumn: fEstabelecimentos.DATA_DE_INICIO_ATIVIDADE
+	toColumn: Dcalendario.Data
 

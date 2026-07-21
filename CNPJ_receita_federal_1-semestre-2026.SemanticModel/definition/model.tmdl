@@ -14,7 +14,6 @@ annotation PBI_ProTooling = ["DevMode"]
 
 ref table fEstabelecimentos
 ref table DateTableTemplate_8e38fe15-063e-4bb5-8d67-0c1e558ab421
-ref table LocalDateTable_935ad064-a203-4d6d-b4e4-6cbd0832395c
 ref table LocalDateTable_fbe016a9-9582-4dc2-a465-c19be6620085
 ref table LocalDateTable_9bbae134-aa1c-4768-8139-73e582415910
 ref table LocalDateTable_81e865bd-397b-413a-9ad8-2c17bc9317bc
