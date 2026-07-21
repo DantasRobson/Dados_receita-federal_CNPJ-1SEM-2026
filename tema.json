@@ -1,0 +1,16 @@
+{
+  "name": "TDXperience Dark Theme",
+  "dataColors": [
+    "#2563EB",
+    "#0686D4",
+    "#3882F6",
+    "#10B981",
+    "#F59E0B",
+    "#EF4444",
+    "#8B5CF6",
+    "#64748B"
+  ],
+  "background": "#0F172A",
+  "foreground": "#F8FAFC",
+  "tableAccent": "#1E293B"
+}

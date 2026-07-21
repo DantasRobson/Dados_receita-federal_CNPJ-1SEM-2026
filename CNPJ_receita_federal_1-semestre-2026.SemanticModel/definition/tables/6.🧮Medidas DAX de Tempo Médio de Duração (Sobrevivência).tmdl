@@ -1,0 +1,18 @@
+table '6.🧮Medidas DAX de Tempo Médio de Duração (Sobrevivência)'
+	lineageTag: cb8f8137-c7d0-482b-bc11-346b3a615bb1
+
+	column Dummy
+		formatString: 0
+		lineageTag: cb7ba492-4828-4f0b-b14d-6c9e525f66fa
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Dummy]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition '6.🧮Medidas DAX de Tempo Médio de Duração (Sobrevivência)' = calculated
+		mode: import
+		source = DATATABLE("Dummy", INTEGER, {{1}})
+
+	annotation PBI_Id = cd44b7c4c5b64461b4c6958b16f75697
+

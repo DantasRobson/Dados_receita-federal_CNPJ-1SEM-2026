@@ -1,0 +1,51 @@
+table '4.🏛️Medidas de Enquadramento Tributário & Porte (Simples / MEI)'
+	lineageTag: 016cb75c-ea15-446a-b9e2-698f577eed77
+
+	measure 'Total Optantes Simples' =
+			
+			CALCULATE(
+			    [Total Estabelecimentos],
+			    dEmpresa[OPCAO_PELO_SIMPLES] = "Sim" || dEmpresa[OPCAO_PELO_SIMPLES] = "S"
+			)
+		formatString: 0
+		lineageTag: 09adfe16-debe-4f9a-a17f-f38622af932f
+
+	measure 'Pct Optantes Simples' =
+			
+			DIVIDE([Total Optantes Simples], [Total Estabelecimentos], 0)
+		lineageTag: c4d3689d-020f-453a-8d3d-154d0093aaae
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Total Optantes MEI' =
+			
+			CALCULATE(
+			    [Total Estabelecimentos],
+			    dEmpresa[OPCAO_PELO_MEI] = "Sim" || dEmpresa[OPCAO_PELO_MEI] = "S"
+			)
+		formatString: 0
+		lineageTag: 10e10f0d-624d-4acf-afb1-fcf4048d692d
+
+	measure 'Pct Optantes MEI' =
+			
+			DIVIDE([Total Optantes MEI], [Total Estabelecimentos], 0)
+		lineageTag: ee5440f6-161c-4dff-8032-f7052f3a2950
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Dummy
+		isHidden
+		formatString: 0
+		lineageTag: 7475e664-f859-4c7f-94ce-ac4212e62d54
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Dummy]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition '4.🏛️Medidas de Enquadramento Tributário & Porte (Simples / MEI)' = calculated
+		mode: import
+		source = DATATABLE("Dummy", INTEGER, {{1}})
+
+	annotation PBI_Id = 95252c16f19349af9239ed20b1ee175f
+

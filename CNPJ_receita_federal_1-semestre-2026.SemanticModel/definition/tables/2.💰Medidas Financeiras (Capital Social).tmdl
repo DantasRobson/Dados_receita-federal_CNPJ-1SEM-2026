@@ -1,0 +1,33 @@
+table '2.💰Medidas Financeiras (Capital Social)'
+	lineageTag: 4e52a23a-3ac8-4bf3-9be6-c7dccaa28abc
+
+	measure 'Capital Social Total' =
+			
+			SUM(fEstabelecimentos[CAPITAL_SOCIAL_DA_EMPRESA])
+		lineageTag: 882e00a0-9a22-4fcd-a519-dc64d6b52bbf
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Capital Social Medio' =
+			
+			AVERAGE(fEstabelecimentos[CAPITAL_SOCIAL_DA_EMPRESA])
+		lineageTag: a4b1404f-8f8d-4956-91d5-af9ea24a18ab
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Dummy
+		isHidden
+		formatString: 0
+		lineageTag: fc685f67-3648-41e2-a220-4325f92db4de
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Dummy]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition '2.💰Medidas Financeiras (Capital Social)' = calculated
+		mode: import
+		source = DATATABLE("Dummy", INTEGER, {{1}})
+
+	annotation PBI_Id = 47d9c83ff2fb4a158d3b30172d10a87e
+

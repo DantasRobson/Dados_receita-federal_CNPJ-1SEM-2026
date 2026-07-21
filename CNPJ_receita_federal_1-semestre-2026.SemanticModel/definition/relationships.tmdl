@@ -20,7 +20,7 @@ relationship c789d6d9-0e71-47c1-930d-59d939926c80
 
 relationship 284ec98f-1ef2-49cf-9037-3e72795960e8
 	joinOnDateBehavior: datePartOnly
-	fromColumn: Dcalendario.Data
+	fromColumn: dCalendario.Data
 	toColumn: LocalDateTable_808ade0b-164e-4ae4-ab9d-f264ccd6893d.Date
 
 relationship 303b7657-70af-ee6c-8624-074ead92822c
@@ -37,5 +37,5 @@ relationship 0bf79be8-2812-05a7-6abb-241c8a0737ac
 
 relationship e58fbc06-255e-c66f-2412-4a00e8dbbadd
 	fromColumn: fEstabelecimentos.DATA_DE_INICIO_ATIVIDADE
-	toColumn: Dcalendario.Data
+	toColumn: dCalendario.Data
 

@@ -1,4 +1,4 @@
-table Dcalendario
+table dCalendario
 	lineageTag: d0f08583-5ff8-48fa-9ba6-248fcfe3fa06
 
 	column Data
@@ -84,7 +84,7 @@ table Dcalendario
 
 		annotation SummarizationSetBy = Automatic
 
-	partition Dcalendario = m
+	partition dCalendario = m
 		mode: import
 		source = ```
 				let

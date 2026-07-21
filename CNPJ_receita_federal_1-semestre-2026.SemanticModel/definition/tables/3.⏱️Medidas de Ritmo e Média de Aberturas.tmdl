@@ -1,0 +1,37 @@
+table '3.⏱️Medidas de Ritmo e Média de Aberturas'
+	lineageTag: 212124e5-bcb2-407f-bb3d-6515b444ff02
+
+	measure 'Media CNPJs Por Dia' =
+			
+			VAR DiasComAbertura = DISTINCTCOUNT(fEstabelecimentos[DATA_DE_INICIO_ATIVIDADE])
+			RETURN
+			DIVIDE([Total Estabelecimentos], DiasComAbertura, 0)
+		lineageTag: 02519ecc-8ce4-40ac-8a10-581d08a8359d
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Media CNPJs Por Mes' =
+			
+			VAR MesesComAbertura = DISTINCTCOUNT(dCalendario[AnoMêsInt])
+			RETURN
+			DIVIDE([Total Estabelecimentos], MesesComAbertura, 0)
+		lineageTag: 4da09be1-73b1-4295-b2e4-8772242a631a
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Dummy
+		isHidden
+		formatString: 0
+		lineageTag: 40409ccc-6b42-463f-ac51-9c21f8d95d92
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Dummy]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition '3.⏱️Medidas de Ritmo e Média de Aberturas' = calculated
+		mode: import
+		source = DATATABLE("Dummy", INTEGER, {{1}})
+
+	annotation PBI_Id = 543c3110e04e4fb38ca765d6b832a809
+

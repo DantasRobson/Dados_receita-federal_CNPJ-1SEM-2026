@@ -1,0 +1,43 @@
+table '1.🔢Medidas Base & Contagens Globais'
+	lineageTag: 12bf032f-76de-493b-82f7-92d0688e0a51
+
+	measure 'Total Estabelecimentos' =
+			
+			COUNTROWS(fEstabelecimentos)
+		formatString: 0
+		lineageTag: 9c4477b7-8c44-4841-9517-ab980f7d95f5
+
+	measure 'Total Matrizes' =
+			
+			CALCULATE(
+			    [Total Estabelecimentos],
+			    fEstabelecimentos[IDENTIFICADOR_MATRIZ/FILIAL] = 1
+			)
+		formatString: 0
+		lineageTag: 141f7d7f-78c5-47ac-9f59-0519e99d3aa0
+
+	measure 'Total Filiais' =
+			
+			CALCULATE(
+			    [Total Estabelecimentos],
+			    fEstabelecimentos[IDENTIFICADOR_MATRIZ/FILIAL] = 2
+			)
+		formatString: 0
+		lineageTag: e8941822-5323-49e4-96e1-055ed34d4dc8
+
+	column Dummy
+		isHidden
+		formatString: 0
+		lineageTag: ffbdb861-1c8f-409e-90b5-29fbcc867796
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Dummy]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition '1.🔢Medidas Base & Contagens Globais' = calculated
+		mode: import
+		source = DATATABLE("Dummy", INTEGER, {{1}})
+
+	annotation PBI_Id = ccf829989681475584ed46dc2ca7bc77
+

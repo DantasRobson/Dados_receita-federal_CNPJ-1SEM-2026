@@ -1,0 +1,45 @@
+table '5.📊Medidas De Contexto & Ranking (Telas 2 e 3)'
+	lineageTag: 89db014d-cfbe-4356-8b41-3148e0f35dd2
+
+	measure 'Pct do Total de Empresas' =
+			
+			DIVIDE(
+			    [Total Estabelecimentos],
+			    CALCULATE([Total Estabelecimentos], ALL(fEstabelecimentos)),
+			    0
+			)
+		lineageTag: eeace2e7-92c1-4814-91ee-71a3eee2a487
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Ranking Municipios' =
+			
+			IF(
+			    ISINSCOPE(dMunicipio[NOME_MUNICIPIO]),
+			    RANKX(
+			        ALLSELECTED(dMunicipio[NOME_MUNICIPIO]),
+			        [Total Estabelecimentos],
+			        ,
+			        DESC,
+			        Dense
+			    )
+			)
+		formatString: 0
+		lineageTag: 87ceeb8b-f3d7-42bd-9b6e-71c0a679c952
+
+	column Dummy
+		isHidden
+		formatString: 0
+		lineageTag: bfd57f4b-22e9-427b-bdea-0e2a09f83e8f
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Dummy]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition '5.📊Medidas De Contexto & Ranking (Telas 2 e 3)' = calculated
+		mode: import
+		source = DATATABLE("Dummy", INTEGER, {{1}})
+
+	annotation PBI_Id = 83a5d65a8735448abe2b6003e22b4840
+

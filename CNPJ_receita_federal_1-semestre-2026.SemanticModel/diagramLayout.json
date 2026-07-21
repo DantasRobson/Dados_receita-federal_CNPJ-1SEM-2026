@@ -4,23 +4,10 @@
     {
       "ordinal": 0,
       "scrollPosition": {
-        "x": 0,
+        "x": 1080.3620259999998,
         "y": 0
       },
       "nodes": [
-        {
-          "location": {
-            "x": 0,
-            "y": 216.35888100000003
-          },
-          "nodeIndex": "Dcalendario",
-          "nodeLineageTag": "d0f08583-5ff8-48fa-9ba6-248fcfe3fa06",
-          "size": {
-            "height": 296,
-            "width": 234
-          },
-          "zIndex": 0
-        },
         {
           "location": {
             "x": 304,
@@ -69,6 +56,90 @@
           "nodeLineageTag": "85e6b432-7ef3-44bc-acc8-e09dabf9304d",
           "size": {
             "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 0,
+            "y": 216.35888100000003
+          },
+          "nodeIndex": "dCalendario",
+          "size": {
+            "height": 296,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 2217,
+            "y": 350.759808
+          },
+          "nodeIndex": "5.📊Medidas De Contexto & Ranking (Telas 2 e 3)",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 1933,
+            "y": 350.759808
+          },
+          "nodeIndex": "4.🏛️Medidas de Enquadramento Tributário & Porte (Simples / MEI)",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 1649,
+            "y": 350.759808
+          },
+          "nodeIndex": "3.⏱️Medidas de Ritmo e Média de Aberturas",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 1365,
+            "y": 350.759808
+          },
+          "nodeIndex": "2.💰Medidas Financeiras (Capital Social)",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 1081,
+            "y": 350.759808
+          },
+          "nodeIndex": "1.🔢Medidas Base & Contagens Globais",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 2501,
+            "y": 350.759808
+          },
+          "nodeIndex": "6.🧮Medidas DAX de Tempo Médio de Duração (Sobrevivência)",
+          "size": {
+            "height": 200,
             "width": 234
           },
           "zIndex": 0

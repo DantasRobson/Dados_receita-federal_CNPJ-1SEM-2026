@@ -8,7 +8,7 @@ model Model
 
 annotation __PBI_TimeIntelligenceEnabled = 1
 
-annotation PBI_QueryOrder = ["fEstabelecimentos","dEmpresa","dCNAE","dMunicipio","Dcalendario"]
+annotation PBI_QueryOrder = ["fEstabelecimentos","dEmpresa","dCNAE","dMunicipio","dCalendario"]
 
 annotation PBI_ProTooling = ["DevMode"]
 
@@ -21,8 +21,14 @@ ref table LocalDateTable_7592daf4-c441-4010-97a3-67d4c379eb38
 ref table dEmpresa
 ref table dCNAE
 ref table dMunicipio
-ref table Dcalendario
+ref table dCalendario
 ref table LocalDateTable_808ade0b-164e-4ae4-ab9d-f264ccd6893d
+ref table '1.🔢Medidas Base & Contagens Globais'
+ref table '2.💰Medidas Financeiras (Capital Social)'
+ref table '3.⏱️Medidas de Ritmo e Média de Aberturas'
+ref table '4.🏛️Medidas de Enquadramento Tributário & Porte (Simples / MEI)'
+ref table '5.📊Medidas De Contexto & Ranking (Telas 2 e 3)'
+ref table '6.🧮Medidas DAX de Tempo Médio de Duração (Sobrevivência)'
 
 ref cultureInfo pt-BR
 
