@@ -1,2 +1,19 @@
-# Dados_receita-federal_CNPJ-1SEM-2026
-ℹ️ Análise baseada em amostra estatística de 10% (4.543.696 registros) do 1º Semestre/2026 para otimização de performance web.
+📊 Dashboard Analytics: Mapeamento de CNPJs no Brasil (Power BI)📌 Visão Geral do ProjetoEste repositório contém a camada de Modelagem Dimensional e Visualização de Dados (Power BI) referente ao mapeamento dos estabelecimentos cadastrados na Receita Federal do Brasil.⚡ Nota de Metodologia e Performance:Para garantir uma experiência de navegação rápida, fluida e acessível na web — evitando lentidão no carregamento dos gráficos em dispositivos móveis e computadores —, este painel foi construído a partir de uma amostra estatística representativa de 10% dos dados da Receita Federal do Brasil do 1º semestre de 2026 (mês de referência: Junho/2026).Apesar de corresponder a 1/10 da base total, a amostragem abrange mais de 4,5 milhões de registros reais, volume mais do que suficiente para garantir alta precisão analítica na identificação de padrões, distribuições geográficas (UF/Municípios), porte de empresas e enquadramentos tributários.📐 Arquitetura do Modelo Dimensional (Star Schema)A modelagem de dados foi desenhada seguindo rigorosamente a metodologia Kimball (Star Schema). A base tratada foi dividida em uma Tabela Fato e quatro Tabelas Dimensão, otimizando a memória do motor VertiPaq e acelerando o tempo de resposta do DAX.Plaintext                  +-------------------+
+                  |      dCNAE        |
+                  | (Cod_CNAE - PK)   |
+                  +---------+---------+
+                            | 1
+                            |
+                            | *
++-------------------+     +-+-----------------+     +---------------------+
+|     dEmpresa      | 1 * | fEstabelecimentos | * 1 |      dMunicipio     |
+| (CNPJ_Basico-PK)  +-----+ (Fato Principal)  +-----+ (Cod_Municipio-PK)  |
++-------------------+     +-+-----------------+     +---------------------+
+                            | *
+                            |
+                            | 1
+                  +---------+---------+
+                  |    dCalendario    |
+                  | (Date - PK)       |
+                  +-------------------+
+🏛️ Estrutura das TabelasTabelaTipoDescrição & ChaveAtributos PrincipaisfEstabelecimentosFatoRegistros de matrizes e filiais.CAPITAL_SOCIAL_DA_EMPRESA, DATA_DE_INICIO_ATIVIDADE, Chaves Estrangeiras (FK).dEmpresaDimensãoAtributos cadastrais da matriz (CNPJ_BASICO).RAZAO_SOCIAL, PORTE_DA_EMPRESA, NATUREZA_JURIDICA, OPCAO_PELO_SIMPLES, OPCAO_PELO_MEI.dMunicipioDimensãoLocalização geográfica (COD_MUNICIPIO).NOME_MUNICIPIO, UF, REGIAO.dCNAEDimensãoRamo e atividade econômica (COD_CNAE).DESCRICAO_CNAE, SECAO_CNAE, DIVISAO_CNAE.dCalendarioDimensãoTabela de datas contínua via Linguagem M.Ano, Mês Num, Nome Mês, Mês/Ano, Trimestre, Semestre.⚙️ Engenharia e Otimização de PerformanceIngestão via Apache Parquet: O Power BI conecta-se diretamente a um arquivo compacted de alta eficiência (.parquet de ~173 MB), garantindo leituras ultra-rápidas sem gargalos de I/O.dCalendario em M sem depender da Fato: Construída via código em Linguagem M no Power Query com intervalo temporal fixo, contornando datas nulas existentes em campos de alteração cadastral/baixasa sem perder a integridade referencial.Cardinalidade e Tipagem: Chaves primárias e estrangeiras devidamente tipadas, permitindo relacionamentos do tipo 1 : N (Um para Muitos) com direção de filtro cruzado Único (Single).Ocultação de Chaves Estrangeiras: Todas as colunas FK da tabela fato foram ocultadas para preservar a integridade do modelo, forçando a utilização exclusiva dos campos das Tabelas Dimensão nos visuais.🛠️ Tecnologias UtilizadasPower BI Desktop (Release 2026)Power Query (Linguagem M): Ingestão e construção da dimensão calendário.DAX (Data Analysis Expressions): Criação de medidas calculadas e inteligência temporal.Apache Parquet: Formato de armazenamento colunar de alta performance.
